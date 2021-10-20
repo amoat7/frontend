@@ -1,0 +1,15 @@
+FROM node:alpine 
+
+WORKDIR /app
+
+COPY package.json .
+
+RUN npm install 
+
+COPY  . . 
+
+CMD ["npm", "run", "start"]
+
+# docker build -f Dockerfile.dev -t dave/react:latest .
+#docker run -p 3000:3000 -v $(pwd):/app dave/react- linux docker run -p 3000:3000 -v %cd%:/app dave/react- windows
+# docker run -it -p 3000:3000 -v /app/node_modules  -v %cd%:/app dave/react
